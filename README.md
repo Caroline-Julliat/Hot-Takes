@@ -3,7 +3,7 @@ Sixième projet du parcours dévelopeur web chez OpenClassrooms. L'objectif est 
 
 -------------------------
 
-## Documentation de l'API:
+## Fonctionnement de l'API:
 - Cloner ce repository
 - Créer un dossier images
 - Créer votre fichier .env et renseigner l'adresse de votre serveur mongoDb, un mot de passe jsonWenToken et le nombre de salt pour Bcrypt

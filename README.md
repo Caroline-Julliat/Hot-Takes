@@ -1,6 +1,19 @@
 # Construisez une API sécurisée pour une application d'avis gastronomiques
 Sixième projet du parcours dévelopeur web chez OpenClassrooms. L'objectif est de __développer le back-end d'une application web de critique des sauces piquantes__ appelée "Hot Takes".  
 
+-------------------------
+
+## Documentation de l'API:
+- Cloner ce repository
+- Créer un dossier images
+- Créer votre fichier .env et renseigner l'adresse de votre serveur mongoDb, un mot de passe jsonWenToken et le nombre de salt pour Bcrypt
+- Effectuer la commande `npm install` pour installer le dossier __node modules__
+- Lancer le serveur avec la commande `npm run start`
+- le front-end est fourni [ici](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)  
+
+-------------------------  
+
+
 ## Contexte du projet  
 
 Votre nouveau client *Piiquante* se dédie à la création de sauces épicées dont les recettes sont gardées secrètes. Pour tirer parti de son succès et générer davantage de buzz, l'entreprise souhaite créer une application web de critique de sauce. L'application est une « galerie de sauces » permettant aux utilisateurs de télécharger leurs sauces piquantes préférées et de liker ou disliker les sauces que d'autres partagent.  
@@ -9,7 +22,7 @@ Le front-end de l'application a été développé à l'aide d'Angular et a été
 
 Une attention particulière doit être portée aux exigences en matière de sécurité. L'entreprise a récemment été victimes d'attaques sur leur site web et veut être sûrs que l'API de cette application est construite selon des pratiques de code sécurisées.
 
-[Lien vers le repo du projet](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)  
+[Lien vers le repo du front-end du projet](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)  
   
     
 ## Spécifications de l'API
@@ -53,6 +66,7 @@ Une attention particulière doit être portée aux exigences en matière de séc
 - Un plugin Mongoose doit assurer la remontée des erreurs issues de la base de données.  
 - Les versions les plus récentes des logiciels sont utilisées avec des correctifs de sécurité actualisés.  
 - Le contenu du dossier images ne doit pas être téléchargé sur GitHub.  
+
 
 
 

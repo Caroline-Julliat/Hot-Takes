@@ -2,6 +2,7 @@ const fs = require("fs")
 const Sauce = require("../models/Sauce")
 
 exports.createSauce = (req, res, next) => {
+    console.log("req.body.sauce", req.body)
   const sauceObject = JSON.parse(req.body.sauce)
   delete sauceObject._id
   delete sauceObject._userId
@@ -72,4 +73,4 @@ exports.getAllSauces = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }))
 }
 
-exports.likeSauce = (req, res, next) => {}
+

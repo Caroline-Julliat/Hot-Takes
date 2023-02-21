@@ -12,7 +12,12 @@ Une attention particulière doit être portée aux exigences en matière de séc
 [Lien vers le repo du projet](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)  
   
     
-## Spécifications de l'API  
+## Spécifications de l'API
+
+| | Point d'accès | Request body | Type de réponse | Fonction
+|:--------------- |:---------------|:---------------|:---------------|:---------------|
+| POST | /api/auth/signup | { email: string, password: string } | { message: string } | Hachage du mot de passe de l'utilisateur ajout de l'utilisateur à la base de données.|  
+| POST | /api/auth/login | { email: string, password: string } | { userId: string, token: string } | Vérification des informations d'identification de l'utilisateur, renvoie l _id de l'utilisateur depuis la base de données et un token web JSON signé (contenant également l'_id de l'utilisateur). |
 
 ![Spécification de l'API](./images/asset/specifications_api_1.png)  
 ![Spécification de l'API](./images/asset/specifications_api_2.png)  

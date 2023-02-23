@@ -2,7 +2,7 @@ const fs = require("fs")
 const Sauce = require("../models/Sauce")
 
 exports.createSauce = (req, res, next) => {
-    console.log("req.body.sauce", req.body)
+    console.log("req.body", req.body)
   const sauceObject = JSON.parse(req.body.sauce)
   delete sauceObject._id
   delete sauceObject._userId

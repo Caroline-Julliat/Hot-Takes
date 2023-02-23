@@ -1,19 +1,21 @@
 const express = require("express")
+const helmet = require("helmet")
 const mongoose = require("mongoose")
 const path = require('path')
 const app = express()
+require('dotenv').config()
+
 
 const sauceRoutes = require("./routes/sauce")
 const userRoutes = require("./routes/user")
 
 mongoose
   .connect(
-    "mongodb+srv://karroj:tS3icMSK3xFCSdCs@cluster0.2nlxymn.mongodb.net/hotTakes?retryWrites=true&w=majority",
+    process.env.DATABASE_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"))
-
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -28,7 +30,8 @@ app.use((req, res, next) => {
     next()
   })
 
-  app.use(express.json());
+  app.use(express.json())
+  app.use(helmet({crossOriginResourcePolicy: false}))
 
   app.use("/api/sauces", sauceRoutes)
   app.use("/api/auth", userRoutes)

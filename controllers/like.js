@@ -19,7 +19,7 @@ exports.likeSauce = (req, res, next) => {
       switch (req.body.like) {
 
         case 1:
-          if (!sauce.usersLiked.includes(req.auth.userId)) {
+          if (!sauce.usersLiked.includes(req.auth.userId) && !sauce.usersDisliked.includes(req.auth.userId)) {
             console.log("un like")
             
             Sauce.updateOne(
@@ -29,12 +29,12 @@ exports.likeSauce = (req, res, next) => {
               .then(() => res.status(200).json({ message: "Like Ajouté" }))
               .catch((error) => res.status(401).json({ error }))
           } else {
-            console.log("l'utilisateur à déjà liké")
+            res.status(403)
           }
           break
 
         case -1:
-            if (!sauce.usersDisliked.includes(req.auth.userId)) {
+            if (!sauce.usersDisliked.includes(req.auth.userId) && !sauce.usersLiked.includes(req.auth.userId)) {
                 console.log("un dislike")
                 Sauce.updateOne(
                   { _id: req.params.id },
@@ -43,7 +43,7 @@ exports.likeSauce = (req, res, next) => {
                   .then(() => res.status(200).json({ message: "Dislike Ajouté" }))
                   .catch((error) => res.status(401).json({ error }))
               } else {
-                console.log("l'utilisateur à déjà disliké")
+                res.status(403)
               }
               break
 
@@ -65,6 +65,8 @@ exports.likeSauce = (req, res, next) => {
               )
                 .then(() => res.status(200).json({ message: "Like Supprimé" }))
                 .catch((error) => res.status(401).json({ error }))
+          } else {
+            res.status(403)
           }
           break
 
